@@ -1,14 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Select the form and feedback division
     const form = document.getElementById("registration-form");
     const feedbackDiv = document.getElementById("form-feedback");
 
+    // Add event listener for form submission
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevent form from submitting to the server
 
+        // Retrieve and trim input values
         const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
 
+        // Initialize validation variables
         let isValid = true;
         const messages = [];
 
@@ -21,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Email validation
         if (!email.includes("@") || !email.includes(".")) {
             isValid = false;
-            messages.push("Email must be valid and include '@' and '.'.");
+            messages.push("Please enter a valid email address.");
         }
 
         // Password validation
@@ -42,4 +46,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
