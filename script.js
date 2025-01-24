@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     // Select the form and feedback division
     const form = document.getElementById("registration-form");
     const feedbackDiv = document.getElementById("form-feedback");
